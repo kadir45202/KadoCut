@@ -1,0 +1,58 @@
+/* Design tokens — calm, Apple-like dark UI. Colour is reserved for state and selection. */
+:root {
+  color-scheme: dark;
+
+  --bg-window: #161618;
+  --bg-panel: #1c1c1e;
+  --bg-panel-2: #212124;
+  --bg-elevated: #2a2a2d;
+  --bg-sunken: #121214;
+  --bg-control: rgba(255, 255, 255, 0.06);
+  --bg-control-hover: rgba(255, 255, 255, 0.1);
+  --bg-control-active: rgba(255, 255, 255, 0.14);
+  --bg-selected: rgba(10, 132, 255, 0.18);
+
+  --separator: rgba(255, 255, 255, 0.07);
+  --separator-strong: rgba(255, 255, 255, 0.12);
+
+  --text-1: #f5f5f7;
+  --text-2: rgba(235, 235, 245, 0.62);
+  --text-3: rgba(235, 235, 245, 0.36);
+
+  --accent: #0a84ff;
+  --accent-hover: #3d9bff;
+  --accent-soft: rgba(10, 132, 255, 0.16);
+  --danger: #ff453a;
+  --warning: #ffd60a;
+  --success: #30d158;
+
+  /* Timeline clip tones: desaturated so the content, not the chrome, stands out. */
+  --clip-video: #2c4466;
+  --clip-video-edge: #4a6a96;
+  --clip-image: #34405a;
+  --clip-audio: #284a3c;
+  --clip-audio-edge: #3f7a60;
+  --clip-text: #3f3a5c;
+  --clip-caption: #54492c;
+  --clip-shape: #4a3a52;
+  --clip-adjust: #3a4a4f;
+  --clip-compound: #2f3f52;
+  --clip-missing: #5c2b2b;
+  --playhead: #f5f5f7;
+
+  --radius-sm: 5px;
+  --radius: 7px;
+  --radius-lg: 11px;
+  --radius-xl: 14px;
+
+  --shadow-pop: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+  --shadow-dialog: 0 24px 70px rgba(0, 0, 0, 0.55), 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+
+  --font: 'Inter Variable', 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+  --font-size: 13px;
+  --font-size-sm: 11.5px;
+  --font-size-xs: 10.5px;
+
+  --titlebar-h: 40px;
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+}

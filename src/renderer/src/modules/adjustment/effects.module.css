@@ -1,0 +1,64 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 10px;
+}
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.title {
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.hint {
+  color: var(--text-3);
+  font-size: var(--font-size-xs);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 6px;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 3px 3px 5px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--bg-control);
+  color: var(--text-2);
+  font-size: var(--font-size-xs);
+  text-align: center;
+  cursor: pointer;
+}
+.tile:hover {
+  background: var(--bg-control-hover);
+  color: var(--text-1);
+}
+.tile img,
+.thumbEmpty {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: calc(var(--radius) - 2px);
+  object-fit: cover;
+  background: var(--bg-sunken);
+}
+.label {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.area {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

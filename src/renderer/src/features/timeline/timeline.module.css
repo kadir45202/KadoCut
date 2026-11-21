@@ -1,0 +1,411 @@
+.timeline {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+.scroller {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+}
+.inner {
+  position: relative;
+}
+
+.rulerRow {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  background: var(--bg-panel);
+  border-bottom: 0.5px solid var(--separator);
+}
+.corner {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  flex-shrink: 0;
+  background: var(--bg-panel);
+  border-right: 0.5px solid var(--separator);
+}
+.rulerLane {
+  position: relative;
+  flex: 1;
+  cursor: text;
+}
+
+.row {
+  display: flex;
+  border-bottom: 0.5px solid var(--separator);
+}
+.row[data-main='true'] {
+  background: rgba(255, 255, 255, 0.015);
+}
+.header {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 6px 0 10px;
+  flex-shrink: 0;
+  background: var(--bg-panel);
+  border-right: 0.5px solid var(--separator);
+}
+.headerIcon {
+  width: 13px;
+  height: 13px;
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+.headerName {
+  flex: 1;
+  min-width: 0;
+  color: var(--text-2);
+  font-size: var(--font-size-xs);
+  font-weight: 550;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.headerButtons {
+  display: flex;
+  gap: 1px;
+}
+.headerButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-3);
+}
+.headerButton:hover {
+  background: var(--bg-control-hover);
+  color: var(--text-1);
+}
+.headerButton[data-on='true'] {
+  color: var(--warning);
+}
+.headerButton svg {
+  width: 12px;
+  height: 12px;
+}
+
+.lane {
+  position: relative;
+  flex: 1;
+}
+.lane[data-locked='true'] {
+  background: repeating-linear-gradient(-45deg, transparent 0 6px, rgba(255, 255, 255, 0.025) 6px 12px);
+}
+
+/* ---------- Clips ---------- */
+.clip {
+  position: absolute;
+  top: 2px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.14);
+  cursor: grab;
+  contain: layout paint;
+}
+.clip:active {
+  cursor: grabbing;
+}
+.clip[data-selected='true'] {
+  box-shadow: inset 0 0 0 2px var(--text-1);
+  z-index: 1;
+}
+.clip[data-caption='true'] {
+  background: var(--clip-caption) !important;
+}
+.clipLabel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 17px;
+  padding: 0 7px;
+  font-size: var(--font-size-xs);
+  font-weight: 550;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.clip[data-kind='video'] .clipLabel,
+.clip[data-kind='image'] .clipLabel {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), transparent);
+}
+.clip[data-kind='text'] .clipLabel {
+  height: 100%;
+}
+.clipName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.clipDuration {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.6);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+.badges svg {
+  width: 11px;
+  height: 11px;
+}
+.badgeText {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.filmstrip {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.tile {
+  position: absolute;
+  top: 0;
+  background-repeat: no-repeat;
+  opacity: 0.92;
+}
+.imageTiles {
+  position: absolute;
+  inset: 0;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  opacity: 0.85;
+  pointer-events: none;
+}
+.waveform {
+  position: absolute;
+  bottom: 2px;
+  pointer-events: none;
+}
+.waveform[data-kind='video'] {
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.fadeIn,
+.fadeOut {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.fadeIn {
+  left: 0;
+  background: linear-gradient(to top right, rgba(0, 0, 0, 0.45) 50%, transparent 50%);
+}
+.fadeOut {
+  right: 0;
+  background: linear-gradient(to top left, rgba(0, 0, 0, 0.45) 50%, transparent 50%);
+}
+.keyframe {
+  position: absolute;
+  bottom: 3px;
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  transform: rotate(45deg);
+  background: var(--text-1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  cursor: ew-resize;
+  z-index: 2;
+}
+.handleLeft {
+  left: 0;
+}
+.handleRight {
+  right: 0;
+}
+.clip[data-selected='true'] .handle::after,
+.clip:hover .handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 3px;
+  height: 16px;
+  margin-top: -8px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.85);
+}
+.handleLeft::after {
+  left: 2px;
+}
+.handleRight::after {
+  right: 2px;
+}
+
+/* ---------- Overlays ---------- */
+.playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  margin-left: -0.5px;
+  background: var(--playhead);
+  z-index: 2;
+  pointer-events: none;
+}
+.playheadKnob {
+  position: sticky;
+  top: 0;
+  width: 11px;
+  height: 14px;
+  margin-left: -5px;
+  border-radius: 2px 2px 6px 6px;
+  background: var(--playhead);
+  z-index: 6;
+}
+.snapLine,
+.dropLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--warning);
+  z-index: 2;
+  pointer-events: none;
+}
+.dropLine {
+  background: var(--accent);
+}
+.newTrackHint {
+  position: absolute;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  z-index: 2;
+  pointer-events: none;
+}
+.emptyHint {
+  position: absolute;
+  color: var(--text-3);
+  font-size: var(--font-size-sm);
+  pointer-events: none;
+}
+
+/* ---------- Cuts, transitions, gaps, fades ---------- */
+.cut,
+.transition {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  margin-top: -9px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  color: var(--text-1);
+}
+.cut {
+  width: 16px;
+  background: rgba(28, 28, 30, 0.85);
+  box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.lane:hover .cut,
+.cut[data-active='true'] {
+  opacity: 1;
+}
+.transition {
+  background: rgba(245, 245, 247, 0.85);
+  color: #1c1c1e;
+}
+.cut[data-active='true'],
+.transition[data-active='true'] {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.cut svg,
+.transition svg {
+  width: 11px;
+  height: 11px;
+  stroke-width: 2;
+}
+.gap {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+  pointer-events: none;
+}
+.fadeHandle {
+  position: absolute;
+  top: 1px;
+  z-index: 3;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  cursor: ew-resize;
+}
+.beat {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+}
+
+/* Markers and in/out range */
+.marker {
+  position: absolute;
+  top: 2px;
+  width: 10px;
+  height: 12px;
+  margin-left: -5px;
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);
+  cursor: pointer;
+  z-index: 3;
+}
+.rangeBar {
+  position: absolute;
+  bottom: 0;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0.7;
+  pointer-events: none;
+}
+.rangeShade {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.32);
+  z-index: 1;
+  pointer-events: none;
+}

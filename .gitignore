@@ -1,0 +1,25 @@
+node_modules/
+out/
+dist/
+resources/bin/
+tests/e2e/output/
+*.log
+*.tsbuildinfo
+
+# Gizli bilgiler: asla commit'lenmemeli
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Yerel araç ayarları
+.claude/settings.local.json
+
+# İşletim sistemi / editör
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

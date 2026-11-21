@@ -1,0 +1,164 @@
+.layout {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 18px;
+  min-height: 420px;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 30px;
+  padding: 0 10px;
+  border: none;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-2);
+  text-align: left;
+}
+.navItem svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 1.75;
+}
+.navItem:hover {
+  background: var(--bg-control);
+  color: var(--text-1);
+}
+.navItem[data-active='true'] {
+  background: var(--bg-control-active);
+  color: var(--text-1);
+}
+.body {
+  min-width: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.groupTitle {
+  font-weight: 650;
+}
+.note {
+  margin: -4px 0 2px;
+  color: var(--text-2);
+  font-size: var(--font-size-sm);
+}
+.componentRow,
+.moduleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 34px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+}
+.componentText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.dim {
+  color: var(--text-3);
+  font-size: var(--font-size-sm);
+}
+.installed {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--success);
+  font-size: var(--font-size-sm);
+}
+.installed svg {
+  width: 13px;
+  height: 13px;
+}
+.error,
+.warn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-sm);
+  word-break: break-word;
+}
+.error {
+  color: #ff8a80;
+}
+.warn {
+  color: var(--warning);
+}
+.error svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+.secret {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+}
+.secretHead {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.secretHead svg {
+  width: 14px;
+  height: 14px;
+  color: var(--text-3);
+}
+.secretHead > span:last-child {
+  margin-left: auto;
+}
+.secretRow {
+  display: flex;
+  gap: 6px;
+}
+.hint {
+  margin: -4px 0 0;
+  color: var(--text-3);
+  font-size: var(--font-size-xs);
+}
+.shortcutList {
+  display: flex;
+  flex-direction: column;
+  max-height: 52vh;
+  overflow-y: auto;
+}
+.shortcutRow {
+  display: grid;
+  grid-template-columns: 1fr 150px auto auto;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 0.5px solid var(--separator);
+}
+.shortcutName {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.shortcutKeys {
+  color: var(--text-2);
+  font-size: var(--font-size-sm);
+  text-align: right;
+}

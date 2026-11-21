@@ -1,0 +1,37 @@
+.curves {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1;
+  margin: 8px auto 4px;
+  border-radius: var(--radius);
+  background: var(--bg-sunken);
+  touch-action: none;
+  cursor: crosshair;
+}
+.curveGrid line {
+  stroke: rgba(255, 255, 255, 0.07);
+  stroke-width: 1;
+}
+.curveRef {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-dasharray: 3 4;
+}
+.curvePoint {
+  fill: var(--bg-panel);
+  stroke: #fff;
+  stroke-width: 1.5;
+  cursor: grab;
+}
+.curvePoint:hover {
+  fill: var(--accent);
+}
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.hint {
+  color: var(--text-3);
+  font-size: var(--font-size-xs);
+}

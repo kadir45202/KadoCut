@@ -1,0 +1,254 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.brand {
+  padding-left: 6px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 36px max(40px, calc((100% - 1240px) / 2)) 48px;
+}
+.hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.subtitle {
+  margin: 4px 0 0;
+  color: var(--text-2);
+}
+
+.quick {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 38px;
+}
+.quickCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 68px;
+  padding: 0 16px;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  box-shadow: inset 0 0 0 0.5px var(--separator-strong);
+  text-align: left;
+  transition: background 0.15s var(--ease), box-shadow 0.15s;
+}
+.quickCard:hover:not(:disabled) {
+  background: var(--bg-panel-2);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.22);
+}
+.quickShape {
+  display: block;
+  border: 1.5px solid var(--text-2);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.quickCard > .quickShape {
+  margin: 0 3px;
+}
+.quickText {
+  display: flex;
+  flex-direction: column;
+}
+.quickTitle {
+  font-weight: 600;
+}
+.quickSub {
+  color: var(--text-3);
+  font-size: var(--font-size-sm);
+}
+
+.recentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.sectionTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+}
+.search {
+  position: relative;
+  width: 240px;
+}
+.search svg {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  color: var(--text-3);
+  pointer-events: none;
+}
+.search input {
+  padding-left: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 22px 18px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.thumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 11;
+  padding: 10px;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--bg-sunken);
+  box-shadow: inset 0 0 0 0.5px var(--separator-strong);
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+}
+.thumb:hover {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+.thumb img,
+.thumbEmpty {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.thumbEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: var(--bg-panel-2);
+  color: var(--text-3);
+}
+.thumbEmpty svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.4;
+}
+.badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: var(--font-size-xs);
+  font-variant-numeric: tabular-nums;
+}
+.meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 0 2px;
+}
+.metaText {
+  flex: 1;
+  min-width: 0;
+}
+.name {
+  font-weight: 550;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.date {
+  color: var(--text-3);
+  font-size: var(--font-size-sm);
+}
+.more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-3);
+}
+.more:hover,
+.more[data-state='open'] {
+  background: var(--bg-control-hover);
+  color: var(--text-1);
+}
+.more svg {
+  width: 16px;
+  height: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.formLabel {
+  margin-top: 8px;
+  color: var(--text-2);
+  font-size: var(--font-size-sm);
+}
+
+/* Photo studio entry */
+.photoCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  height: 72px;
+  margin: 14px 0 22px;
+  padding: 0 18px;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(100deg, rgba(10, 132, 255, 0.14), rgba(191, 90, 242, 0.1) 60%, var(--bg-panel));
+  box-shadow: inset 0 0 0 0.5px var(--separator-strong);
+  text-align: left;
+  transition: box-shadow 0.15s;
+}
+.photoCard:hover:not(:disabled) {
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.28);
+}
+.photoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.photoIcon svg {
+  width: 22px;
+  height: 22px;
+}
+.photoArrow {
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  color: var(--text-3);
+}

@@ -1,0 +1,36 @@
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--titlebar-h);
+  /* Leave room for the native minimize/maximize/close buttons. */
+  padding: 0 146px 0 10px;
+  background: var(--bg-window);
+  border-bottom: 0.5px solid var(--separator);
+  flex-shrink: 0;
+}
+.side {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  z-index: 1;
+}
+.right {
+  margin-left: auto;
+  gap: 6px;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 40%;
+  pointer-events: none;
+}
+.center > * {
+  pointer-events: auto;
+  -webkit-app-region: no-drag;
+}

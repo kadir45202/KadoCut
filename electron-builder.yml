@@ -1,0 +1,48 @@
+appId: app.maker.editor
+productName: Maker
+copyright: Copyright © 2026 Maker
+
+directories:
+  output: dist
+  buildResources: build
+
+# Only the compiled app; renderer libraries are already bundled by Vite.
+files:
+  - out/**/*
+  - package.json
+  # Native AI runtime: keep Windows x64 only.
+  - '!node_modules/onnxruntime-node/bin/napi-v*/{darwin,linux}/**'
+  - '!node_modules/onnxruntime-node/bin/napi-v*/win32/arm64/**'
+
+# Native modules and their DLLs must live outside the asar archive.
+asarUnpack:
+  - node_modules/onnxruntime-node/**/*
+
+extraResources:
+  - from: resources/bin/win
+    to: bin
+  - from: resources/sfx
+    to: sfx
+
+# Reuse the Electron build that is already installed instead of downloading it again.
+electronDist: node_modules/electron/dist
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: build/icon.png
+  executableName: Maker
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: Maker
+  uninstallDisplayName: Maker
+  # Projects (Documents\Maker) and settings survive an uninstall.
+  deleteAppDataOnUninstall: false
+  installerLanguages: [tr_TR, en_US]
+  artifactName: Maker-Kurulum-${version}.${ext}

@@ -1,0 +1,197 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+}
+.presets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.preset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 78px;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--bg-sunken);
+  box-shadow: inset 0 0 0 0.5px var(--separator-strong);
+}
+.preset:hover {
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+.sample {
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.presetName {
+  color: var(--text-3);
+  font-size: var(--font-size-xs);
+}
+.fontButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  height: 26px;
+  padding: 0 8px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--bg-control);
+  color: var(--text-1);
+  font-size: 13px;
+  cursor: pointer;
+}
+.fontButton:hover {
+  background: var(--bg-control-hover);
+}
+.fontButton span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.fontButton svg {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  color: var(--text-2);
+}
+.fontPicker {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  max-height: min(520px, 70vh);
+}
+.fontSearch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 0.5px solid var(--separator-strong);
+}
+.fontSearch svg {
+  width: 14px;
+  height: 14px;
+  color: var(--text-3);
+}
+.fontSearch input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-1);
+  font: inherit;
+}
+.fontList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px;
+}
+.fontGroup {
+  padding: 8px 8px 4px;
+  color: var(--text-3);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.fontRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  font-size: 17px;
+  cursor: pointer;
+}
+.fontRow:hover {
+  background: var(--bg-control-hover);
+}
+.fontRow[data-active='true'] {
+  background: var(--bg-selected);
+}
+.fontRow span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.fontRemove {
+  display: flex;
+  padding: 3px;
+  border: none;
+  background: transparent;
+  color: var(--text-3);
+  cursor: pointer;
+}
+.fontRemove svg {
+  width: 13px;
+  height: 13px;
+}
+.fontEmpty {
+  padding: 16px;
+  color: var(--text-3);
+  text-align: center;
+}
+.fontAdd {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  border: none;
+  border-top: 0.5px solid var(--separator-strong);
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+}
+.fontAdd svg {
+  width: 14px;
+  height: 14px;
+}
+
+.title {
+  margin-top: 8px;
+  color: var(--text-3);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.templates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 6px;
+}
+.template {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 6px 7px;
+  border: none;
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, #3a3a40, #1f1f24);
+  color: var(--text-2);
+  cursor: pointer;
+}
+.template:hover {
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.templateSample {
+  max-width: 100%;
+  padding: 1px 6px;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

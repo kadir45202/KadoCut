@@ -1,0 +1,75 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+  padding: 0 8px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--bg-control);
+  color: var(--text-2);
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+}
+.trigger:hover {
+  background: var(--bg-control-hover);
+  color: var(--text-1);
+}
+.trigger svg {
+  width: 14px;
+  height: 14px;
+}
+.list {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.title {
+  font-weight: 650;
+}
+.job {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.jobRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.jobLabel {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-3);
+}
+.cancel:hover {
+  background: var(--bg-control-hover);
+  color: var(--text-1);
+}
+.cancel svg {
+  width: 12px;
+  height: 12px;
+}
+.done {
+  color: var(--success);
+  font-size: var(--font-size-sm);
+}
+.error {
+  color: #ff8a80;
+  font-size: var(--font-size-sm);
+  word-break: break-word;
+}

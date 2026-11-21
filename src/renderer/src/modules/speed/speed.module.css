@@ -1,0 +1,94 @@
+.chips {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.chip {
+  height: 22px;
+  padding: 0 9px;
+  border: none;
+  border-radius: 11px;
+  background: var(--bg-control);
+  color: var(--text-2);
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+}
+.chip:hover {
+  background: var(--bg-control-hover);
+  color: var(--text-1);
+}
+.chip[data-active='true'] {
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+}
+.presetGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.preset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 3px 4px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--bg-sunken);
+  color: var(--text-2);
+  font-size: var(--font-size-xs);
+  box-shadow: inset 0 0 0 0.5px var(--separator-strong);
+}
+.preset:hover {
+  color: var(--text-1);
+}
+.preset[data-active='true'] {
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+  color: var(--text-1);
+}
+.thumb {
+  width: 100%;
+  height: 28px;
+}
+.thumbLine {
+  fill: none;
+  stroke: var(--text-1);
+  stroke-width: 7;
+}
+.editor {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--bg-sunken);
+  box-shadow: inset 0 0 0 0.5px var(--separator-strong);
+  touch-action: none;
+}
+.grid {
+  stroke: rgba(255, 255, 255, 0.06);
+}
+.axis {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-dasharray: 3 3;
+}
+.label {
+  fill: var(--text-3);
+  font-size: 8px;
+}
+.line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+.point {
+  fill: var(--bg-panel);
+  stroke: var(--text-1);
+  stroke-width: 1.5;
+  cursor: grab;
+}
+.point:hover {
+  fill: var(--accent);
+}
+.hint {
+  color: var(--text-3);
+  font-size: var(--font-size-xs);
+}

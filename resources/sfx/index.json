@@ -1,0 +1,98 @@
+[
+  {
+    "id": "whoosh",
+    "category": "transition",
+    "file": "whoosh.wav",
+    "duration": 0.75
+  },
+  {
+    "id": "swoosh",
+    "category": "transition",
+    "file": "swoosh.wav",
+    "duration": 0.38
+  },
+  {
+    "id": "swipe",
+    "category": "transition",
+    "file": "swipe.wav",
+    "duration": 0.24
+  },
+  {
+    "id": "riser",
+    "category": "transition",
+    "file": "riser.wav",
+    "duration": 2.2
+  },
+  {
+    "id": "pop",
+    "category": "ui",
+    "file": "pop.wav",
+    "duration": 0.14
+  },
+  {
+    "id": "click",
+    "category": "ui",
+    "file": "click.wav",
+    "duration": 0.05
+  },
+  {
+    "id": "ding",
+    "category": "ui",
+    "file": "ding.wav",
+    "duration": 1.4
+  },
+  {
+    "id": "notification",
+    "category": "ui",
+    "file": "notification.wav",
+    "duration": 0.95
+  },
+  {
+    "id": "success",
+    "category": "ui",
+    "file": "success.wav",
+    "duration": 1
+  },
+  {
+    "id": "error",
+    "category": "ui",
+    "file": "error.wav",
+    "duration": 0.5
+  },
+  {
+    "id": "boom",
+    "category": "impact",
+    "file": "boom.wav",
+    "duration": 1.3
+  },
+  {
+    "id": "glitch",
+    "category": "impact",
+    "file": "glitch.wav",
+    "duration": 0.55
+  },
+  {
+    "id": "shutter",
+    "category": "fun",
+    "file": "shutter.wav",
+    "duration": 0.3
+  },
+  {
+    "id": "boing",
+    "category": "fun",
+    "file": "boing.wav",
+    "duration": 0.7
+  },
+  {
+    "id": "typing",
+    "category": "fun",
+    "file": "typing.wav",
+    "duration": 1.25
+  },
+  {
+    "id": "sparkle",
+    "category": "fun",
+    "file": "sparkle.wav",
+    "duration": 1.1
+  }
+]
